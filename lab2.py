@@ -10,21 +10,16 @@ b = input("Подтвердите пароль: ")
 password(a, b)
 
 def determine_seat_type(seat_number):
-    coupe_upper = [1, 2, 3, 4]
-    coupe_lower = [5, 6, 7, 8]
-    side_upper = [9, 10]
-    side_lower = [11, 12]
-
-    if seat_number in coupe_upper:
+    if seat_number % 2 == 0 and seat_number <= 18:
         return "Верхнее место в купе"
-    elif seat_number in coupe_lower:
+    elif seat_number % 2 != 0 and seat_number <= 18:
         return "Нижнее место в купе"
-    elif seat_number in side_upper:
+    elif seat_number % 2 == 0 and seat_number > 18 and seat_number <= 54:
         return "Верхнее боковое место"
-    elif seat_number in side_lower:
+    elif seat_number % 2 != 0 and seat_number > 18 and seat_number <= 54:
         return "Нижнее боковое место"
     else:
-        return "Неверный номер места"
+        return "Выберете масто в вагоне (54 мест): "
 
 seat_number = int(input("Введите номер места в плацкартном вагоне: "))
 print(determine_seat_type(seat_number))
