@@ -1,11 +1,10 @@
 def password(a, b):
-    if a == b:
+ a = input("Введите пароль: ")
+ b = input("Подтвердите пароль: ")
+if a == b:
         print("Пароль принят")
     else:
         print("Пароль не принят")
-
-a = input("Введите пароль: ")
-b = input("Подтвердите пароль: ")
 
 password(a, b)
 
